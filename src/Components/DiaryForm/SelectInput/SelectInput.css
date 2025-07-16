@@ -1,0 +1,24 @@
+.select-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.select-input label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.select-input select {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.select-input select:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+}
