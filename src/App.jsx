@@ -1,6 +1,6 @@
 
-import React from 'react';
-import DiaryForm from './Components/DiaryForm/DiaryForm.jsx';
+
+import DiaryForm from './frontEnd/components/DiaryForm/DiaryForm';
 
 function App() {
   return (
