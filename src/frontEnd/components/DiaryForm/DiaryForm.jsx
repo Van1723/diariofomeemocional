@@ -10,12 +10,13 @@ import './Global.css';
 function DiaryForm() {
   const [tipoFome, setTipoFome] = useState("");
   const [intensidade, setIntensidade] = useState("");
-  const [sentiuAntes, setSentiuAntes] = useState([]);
-  const [comeuAntes, setComeuAntes] = useState([]);
-  const [comeu, setComeu] = useState([]);
+  const [sentiuAntes, setSentiuAntes] = useState("");
+  const [comeuAntes, setComeuAntes] = useState("");
+  const [comeu, setComeu] = useState("");
   
-  const [sentiuDepois, setSentiuDepois] = useState([]);
+  const [sentiuDepois, setSentiuDepois] = useState("");
   const [contexto, setContexto] = useState("");
+  const [mostrarDados, setMostrarDados] = useState(false);
 
   
   const listaSentimentos = ["Ansioso(a)", "Triste", "Feliz", "Entediado(a)", 
@@ -31,6 +32,7 @@ function DiaryForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setMostrarDados(true);
     const data = {
       dataHora: new Date().toISOString(),
       tipoFome,
@@ -107,6 +109,18 @@ function DiaryForm() {
 
         <Button />
       </form>
+      {mostrarDados && (
+        <div className="preview">
+          <h3>Dados enviados</h3>
+          <p>Tipo de fome: {tipoFome}</p>
+          <p>Intensidade: {intensidade}</p>
+          <p>Comeu antes: {comeuAntes.join(", ")}</p>
+          <p>Sentiu antes: {sentiuAntes.join(", ")}</p>
+          <p>Comeu: {comeu.join(", ")}</p>
+          <p>Sentiu depois: {sentiuDepois.join(", ")}</p>
+          <p>Contexto: {contexto}</p>
+        </div>
+      )}
     </div>
   );
 }
