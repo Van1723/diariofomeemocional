@@ -1,25 +1,22 @@
 
-import { useState } from "react";
-import DiaryForm from "./frontEnd/components/DiaryForm";
-import ListaRegistro from "./frontEnd/components/ListaRegistro";
+import { Routes, Route } from "react-router-dom";
+import Home from "./frontEnd/pages/Home";
+import DiaryForm from "./frontEnd/pages/DiaryForm";
+import ListaRegistro from "./frontEnd/pages/ListaRegistro";
 
 function App() {
-  const [registros, setRegistros] = useState([]);
-
-  function adicionarRegistro(registro) {
-    setRegistros([...registros, registro]);
-  }
-
   return (
-    <div>
+    <>
+    
 
-      <DiaryForm onSubmit={adicionarRegistro} />
-
-      <ListaRegistro registros={registros} />
-
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/diary" element={<DiaryForm />} />
+        <Route path="/lista" element={<ListaRegistro/>}/>
+      </Routes>
+    </>
   );
 }
 
 export default App;
-

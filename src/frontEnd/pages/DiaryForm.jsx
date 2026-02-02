@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function DiaryForm({ onSubmit }) {
+
+
+export default function DiaryForm ({ onSubmit }) {
+  
 
   const [tipoFome, setTipoFome] = useState("");
   const [intensidade, setIntensidade] = useState(5);
@@ -76,7 +80,14 @@ const listaAlimentos = [
 
   return (
 
+     
+    
+
+
     <form onSubmit={handleSubmit}>
+      <Link to="/home" style={{ textDecoration: "none", color: "blue" }}>
+        ← Voltar
+      </Link>
 
       <select value={tipoFome} onChange={e => setTipoFome(e.target.value)}>
         <option value="">Selecione o tipo de fome</option>
@@ -165,9 +176,18 @@ const listaAlimentos = [
 
     <button type="submit">Registrar</button>
     {mostrarDados && <p>Registro salvo ✅</p>}
+    
 
 
 
     </form>
+    
   );
 }
+
+ 
+
+
+
+
+

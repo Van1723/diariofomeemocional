@@ -1,6 +1,6 @@
 import { useState } from "react";
-import DiaryForm from "../components/DiaryForm";
-import Header from "../../components/Header";
+import DiaryForm from "./DiaryForm";
+import Header from "../components/Header";
 import ListaRegistro from "../components/ListaRegistro";
 
 export default function RegistroPage() {
