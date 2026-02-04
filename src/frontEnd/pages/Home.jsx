@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
 
-const Home = () => (
-  <nav>
-    <Link to="/home">Home</Link> |{" "}
-    <Link to="/diary">Diário|</Link>{" "}
-    <Link to="/lista">Lista|</Link>{" "}
-  </nav>
-);
+import Navbar from "../components/Navbar";
 
-export default Home;
+export default function Home() {
+  return (
+    <>
+      <Navbar />
+
+      
+    </>
+  );
+}

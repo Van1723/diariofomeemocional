@@ -1,5 +1,6 @@
-import RegistroItem from "./RegistroItem";
+
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function ListaRegistro({ registros = [] }) {
   const navigate = useNavigate();
@@ -21,9 +22,12 @@ export default function ListaRegistro({ registros = [] }) {
       <h3>Histórico</h3>
 
       {registros.map((registro, index) => (
-        <RegistroItem key={index} registro={registro} />
-      ))}
-
+      <div key={index}>
+        <Link to={`/registro/${index}`}>
+          Ver registro
+        </Link>
+      </div>
+    ))}
       <button onClick={() => navigate("/home")}>
         Voltar para Home
       </button>

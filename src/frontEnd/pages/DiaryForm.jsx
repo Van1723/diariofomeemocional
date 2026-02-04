@@ -8,10 +8,10 @@ export default function DiaryForm ({ onSubmit }) {
 
   const [tipoFome, setTipoFome] = useState("");
   const [intensidade, setIntensidade] = useState(5);
-  const [sentiuAntes, setSentiuAntes] = useState([]);
-  const [sentiuDepois, setSentiuDepois] = useState([]);
-  const [comeuAntes, setComeuAntes] = useState([]);
-  const [comeu, setComeu] = useState([]);
+  const [sentiuAntes, setSentiuAntes] = useState("");
+  const [sentiuDepois, setSentiuDepois] = useState("");
+  const [comeuAntes, setComeuAntes] = useState("");
+  const [comeu, setComeu] = useState("");
   const [contexto, setContexto] = useState("");
   const [mostrarDados, setMostrarDados] = useState(false);
 
@@ -69,10 +69,10 @@ const listaAlimentos = [
   setTipoFome("");
   setIntensidade(5
   );
-  setSentiuAntes([]);
-  setComeuAntes([]);
-  setComeu([]);
-  setSentiuDepois([]);
+  setSentiuAntes("");
+  setComeuAntes("");
+  setComeu("");
+  setSentiuDepois("");
   setContexto("");
 };
 
