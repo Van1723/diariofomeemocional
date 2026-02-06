@@ -1,10 +1,12 @@
-import { useParams, useNavigate } from "react-router-dom"; 
+import { useParams } from "react-router-dom"; 
+import  "../components/global.css"
+import  "../components/list.css"
 
 export default function RegistroItem({ registros = [] }) 
  {
    console.log("registros recebidos:", registros);
   const { id } = useParams();
-  const navigate = useNavigate();
+  
 
   const registro = registros[id];
 
@@ -12,9 +14,7 @@ export default function RegistroItem({ registros = [] })
     return (
       <div>
         <p>Nenhum registro</p>
-        <button onClick={() => navigate("/home")}>
-          Voltar para Home
-        </button>
+        
       </div>
     );
   }

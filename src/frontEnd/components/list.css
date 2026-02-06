@@ -1,0 +1,16 @@
+div.app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.list, div.preview{
+    max-width: 250px;
+    border: solid 2px red;
+    padding: 20px;
+    border-radius: 10%;
+
+}
+p{
+    font-weight: lighter;
+}

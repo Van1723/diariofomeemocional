@@ -1,7 +1,6 @@
 import { useState } from "react";
 import DiaryForm from "./DiaryForm";
-import Header from "../components/Header";
-import ListaRegistro from "../components/ListaRegistro";
+import ListaRegistro from "../pages/ListaRegistro";
 
 export default function RegistroPage() {
   const [registros, setRegistros] = useState([]);
@@ -13,7 +12,7 @@ export default function RegistroPage() {
   return (
     <div>
 
-      <Header/>
+      
 
       <DiaryForm onSubmit={adicionarRegistro} />
 
