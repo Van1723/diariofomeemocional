@@ -1,12 +1,14 @@
 import React from 'react';
 import './Button.css';
 
-function SubmitButton() {
+const Button = () =>  {
   return (
-    <button type="submit" >
-      Enviar
-    </button>
+    <Button type="submit" >
+      Enviar 
+    </Button>
   );
 }
 
-export default SubmitButton;
+export default Button;
+
+ 

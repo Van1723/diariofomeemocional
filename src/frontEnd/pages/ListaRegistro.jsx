@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function ListaRegistro({ registros }) {
   
-
+ // se não há registros exibe nenhm resgistro caso contrario exibe todos dados
   if (!registros || registros.length === 0) {
     return (
       <div>
@@ -32,7 +32,7 @@ export default function ListaRegistro({ registros }) {
         
 
 
-
+         {/* exibe o registro separado */}
         <Link to={`/registro/${index}`}>
           Ver registro
         </Link>

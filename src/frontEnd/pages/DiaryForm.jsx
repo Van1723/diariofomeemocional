@@ -3,9 +3,10 @@ import  "../components/global.css"
 
 
 
+
 export default function DiaryForm ({ onSubmit }) {
  
-
+  // variaveis 
   const [tipoFome, setTipoFome] = useState("");
   const [intensidade, setIntensidade] = useState(5);
   const [sentiuAntes, setSentiuAntes] = useState("");
@@ -45,12 +46,12 @@ const listaAlimentos = [
   "Fruta"
 ];
 
-
   
-
+  
+ // renderização
  const handleSubmit = (e) => {
   e.preventDefault();
-
+   // variavel do formulario e data local
   const novoRegistro = {
     dataHora: new Date().toLocaleString(),
     tipoFome,
@@ -61,9 +62,10 @@ const listaAlimentos = [
     sentiuDepois,
     contexto
   };
-
+  
+  // novo resgistro adicionado
   onSubmit(novoRegistro);
-
+  // form controlado
   setMostrarDados(true);
 
   setTipoFome("");
@@ -79,7 +81,8 @@ const listaAlimentos = [
     
   
   return (
-     
+    
+     // css alinhado ao centro e em colunas assim como o form
 
     <div id="container" style={{ display:"flex",textAlign:"center",justifyContent:"center",flexDirection:"column", alignItems:"center"}}>
       <form onSubmit={handleSubmit}  style={{display:"flex",flexDirection:"column", alignItems:"center", justifyContent:"center",border:"solid 2px black", borderRadius:"5%"}}>
@@ -173,7 +176,7 @@ const listaAlimentos = [
             placeholder="O que estava acontecendo?"
           />
         
-
+           {/* setmostradados é pra mostrar os dados em baixo no registro com histórico */}
         <button type="submit">Registrar</button>
         {mostrarDados && <p>Registro salvo ✅</p>}
       
@@ -182,9 +185,8 @@ const listaAlimentos = [
 
 
     </form>
-    <div className="footer">
-          <h4>Footer</h4>
-      </div>
+
+     
   </div>
  );
 }

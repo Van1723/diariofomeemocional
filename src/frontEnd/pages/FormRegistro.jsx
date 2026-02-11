@@ -13,9 +13,9 @@ export default function RegistroPage() {
     <div>
 
       
-
+      {/* adiciona registro do forms */}
       <DiaryForm onSubmit={adicionarRegistro} />
-
+          {/* lista registros */}
       <ListaRegistro registros={registros} />
 
     </div>

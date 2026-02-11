@@ -5,11 +5,12 @@ import  "../components/list.css"
 export default function RegistroItem({ registros = [] }) 
  {
    console.log("registros recebidos:", registros);
+   // busca o id do registro
   const { id } = useParams();
   
 
   const registro = registros[id];
-
+//  sem id, sem registro
   if (!registro) {
     return (
       <div>
@@ -18,7 +19,7 @@ export default function RegistroItem({ registros = [] })
       </div>
     );
   }
-
+//  caso encontre, exibe
   return (
     <div className="preview">
       <p><strong>Data:</strong> {registro.dataHora}</p>
