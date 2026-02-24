@@ -6,6 +6,14 @@
     
      
 }
+.erro {
+  color: #d93025;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -108,6 +116,9 @@ textarea{
     width: 250px;
     
 }
+.textarea-erro {
+  border: 2px solid #d93025 !important;
+}
 
 button{
 
@@ -125,5 +136,21 @@ input{
 input, textarea {
  
   box-sizing: border-box;
+}
+.input-erro {
+  border: 2px solid #d93025 !important;
+  outline: none;
+}
+.grupo.input-erro {
+  padding: 10px;
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  background-color: #fdecea;
+}
+
+
+
+.select-erro {
+  border: 2px solid #d93025 !important;
 }
 

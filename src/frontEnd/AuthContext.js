@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   });
 
   const login = (email, password) => {
-    if (email === 'vanessa.tecma@gmail.com' && password === 'Biologa17!') {
+    if (email === 'teste@teste.com' && password === '123456') {
       const userData = {
         email,
         name: 'Usuário Silva',
