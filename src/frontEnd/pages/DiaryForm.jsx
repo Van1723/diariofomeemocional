@@ -17,6 +17,7 @@ export default function DiaryForm ({ onSubmit }) {
   const [contexto, setContexto] = useState("");
   const [mostrarDados, setMostrarDados] = useState(false);
   const [erros, setErros] = useState({});
+  
  
 
   const listaSentimentos = [
@@ -53,11 +54,26 @@ const listaAlimentos = [
  // renderização
  const handleSubmit = (e) => {
   e.preventDefault();
-  
+   const errosValidacao = validationFormulario({
+    tipoFome,
+    intensidade,
+    sentiuAntes,
+    comeuAntes,
+    comeu,
+    sentiuDepois,
+    contexto
+  });
 
+  if (Object.keys(errosValidacao).length > 0) {
+    setErros(errosValidacao);
+    return;
+  }
+
+  const registrosSalvos =
+    JSON.parse(localStorage.getItem("registros")) || [];
 
   const novoRegistro = {
-    dataHora: new Date().toISOString(),
+    dataHora: new Date().toLocaleString(),
     tipoFome,
     intensidade,
     sentiuAntes,
@@ -67,30 +83,12 @@ const listaAlimentos = [
     contexto
   };
 
-  const erros = validationFormulario(novoRegistro);
-  console.log("Novo registro:", novoRegistro);
+  registrosSalvos.push(novoRegistro);
 
- 
- console.log("Erros encontrados:", erros);
+  localStorage.setItem("registros", JSON.stringify(registrosSalvos));
 
-  if (Object.keys(erros).length > 0) {
-    setErros(erros);
-    return; // PARA aqui se tiver erro
-  }
-
-  // Se passou na validação:
-  onSubmit(novoRegistro);
   setMostrarDados(true);
-
-  // Resetar campos
-  setTipoFome("");
-  setIntensidade("");
-  setSentiuAntes("");
-  setComeuAntes("");
-  setComeu("");
-  setSentiuDepois("");
-  setContexto("");
-};
+ };
  
 
 
@@ -102,7 +100,17 @@ const listaAlimentos = [
 
     <div id="container" style={{ display:"flex",textAlign:"center",justifyContent:"center",flexDirection:"column", alignItems:"center"}}>
       <form onSubmit={handleSubmit}  style={{display:"flex",flexDirection:"column", alignItems:"center", justifyContent:"center",border:"solid 2px black", borderRadius:"5%"}}>
-          <select value={tipoFome} onChange={e => setTipoFome(e.target.value)}>
+          <select value={tipoFome} onChange={(e) => {
+              setTipoFome(e.target.value);
+
+              if (erros.tipoFome) {
+                setErros(prev => {
+                  const novosErros = { ...prev };
+                  delete novosErros.tipoFome;
+                  return novosErros;
+                });
+              }
+            }}>
             <option required value="">Selecione o tipo de fome</option>
             <option value="Física">Física</option>
             <option value="Emocional">Emocional</option>
@@ -183,10 +191,9 @@ const listaAlimentos = [
       />
       {item}
     </label>
-  ))}
-</div>
-
-{erros.comeu && <span className="erro">{erros.comeu}</span>}
+      ))}
+    </div>
+     {erros.comeu && <span className="erro">{erros.comeu}</span>}
 
           <h4>Sentiu depois</h4>
         <div className={`grupo ${erros.sentiuDepois ? "input-erro" : ""}`}>

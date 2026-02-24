@@ -21,17 +21,19 @@ export default function RegistroItem({ registros = [] })
   }
 //  caso encontre, exibe
   return (
-    <div className="preview">
-      <p><strong>Data:</strong> {registro.dataHora}</p>
-      <p><strong>Tipo:</strong> {registro.tipoFome}</p>
-      <p><strong>Intensidade:</strong> {registro.intensidade}</p>
+    <div className="container-registros">
+      <div className="quadrado">
+        <p><strong>Data:</strong> {registro.dataHora}</p>
+        <p><strong>Tipo:</strong> {registro.tipoFome}</p>
+        <p><strong>Intensidade:</strong> {registro.intensidade}</p>
 
-      <p><strong>Sentiu antes:</strong> {registro.sentiuAntes}</p>
-      <p><strong>Comeu antes:</strong> {registro.comeuAntes}</p>
-      <p><strong>Comeu:</strong> {registro.comeu}</p>
-      <p><strong>Sentiu depois:</strong> {registro.sentiuDepois}</p>
+        <p><strong>Sentiu antes:</strong> {registro.sentiuAntes}</p>
+        <p><strong>Comeu antes:</strong> {registro.comeuAntes}</p>
+        <p><strong>Comeu:</strong> {registro.comeu}</p>
+        <p><strong>Sentiu depois:</strong> {registro.sentiuDepois}</p>
 
-      <p><strong>Contexto:</strong> {registro.contexto}</p>
+        <p><strong>Contexto:</strong> {registro.contexto}</p>
+      </div>
     </div>
   );
 }

@@ -1,16 +1,23 @@
-div.app{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-div.list, div.preview{
-    max-width: 250px;
-    border: solid 2px red;
+.tela {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
     padding: 20px;
-    border-radius: 10%;
-
+    box-sizing: border-box;
 }
-p{
+
+.list {
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+p {
     font-weight: lighter;
 }

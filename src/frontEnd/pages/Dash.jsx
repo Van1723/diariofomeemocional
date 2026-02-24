@@ -1,33 +1,27 @@
-import { Pie } from "react-chartjs-2"
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend
-} from "chart.js"
+import { useState, useEffect } from "react";
+import CardHorarioPico from "../components/CardHorarioPico/index.jsx";
+import CardIntensidade from "../components/CardIntensidade/index.jsx";
+import SentimentosGrafico from "../components/SentimentosGrafico/index.jsx";
+import  "../components/global.css"
 
-ChartJS.register(ArcElement, Tooltip, Legend)
+function Dash() {
+  const [registros, setRegistros] = useState([]);
 
-export default function ChartFome({ registros = [] }) {
-  console.log("DADOS RECEBIDOS:", registros)
+  useEffect(() => {
+    const dadosSalvos =
+      JSON.parse(localStorage.getItem("registros")) || [];
+    setRegistros(dadosSalvos);
+  }, []);
 
-  const emocional = registros.filter(
-    r => r.tipoFome === "emocional"
-  ).length
-
-  const fisica = registros.filter(
-    r => r.tipoFome === "física"
-  ).length
-
-  const data = {
-    labels: ["Emocional", "Física"],
-    datasets: [
-      {
-        data: [emocional, fisica],
-        backgroundColor: ["#f87171", "#60a5fa"]
-      }
-    ]
-  }
-
-  return <Pie data={data} />
+  return (
+    <div className="dashboard">
+      <div className="cards">
+        <CardIntensidade registros={registros} />
+        <CardHorarioPico registros={registros} />
+        <SentimentosGrafico registros={registros} />
+      </div>
+    </div>
+  );
 }
+
+export default Dash;
