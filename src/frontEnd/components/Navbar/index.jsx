@@ -16,7 +16,10 @@ import { useNavigate } from "react-router-dom";
   justifyContent: "space-between",
   alignItems: "center",
   padding: "0 16px",
-  boxSizing: "border-box" }}>
+  boxSizing: "border-box",
+  maxWidth: "1200px",
+  margin: "0 auto",
+   }}>
     <div className="Navbar" style={{}}>
       <Link to="/diary">Home</Link> |{" "}
       <Link to="/dash">Dashboard|</Link>{" "}

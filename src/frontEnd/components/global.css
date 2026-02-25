@@ -155,14 +155,34 @@ input, textarea {
 }
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   padding: 20px;
+  
 }
-.card {
+div.cards{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  
+}
+div.card {
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 16px;
+  padding: 20px;
+  width: 140px;
+  gap: 50px;
+  
+}
+div#horario.card{
+  width: 140px;
+  padding: 20px;
+}
+.graph{
+  padding: 20px;
+  margin-top: 20px;
+  justify-content: center;
 }

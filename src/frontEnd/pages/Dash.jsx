@@ -18,8 +18,12 @@ function Dash() {
       <div className="cards">
         <CardIntensidade registros={registros} />
         <CardHorarioPico registros={registros} />
-        <SentimentosGrafico registros={registros} />
       </div>
+      <>
+       <div className="graph">
+          <SentimentosGrafico registros={registros} />
+      </div>
+       </>
     </div>
   );
 }
