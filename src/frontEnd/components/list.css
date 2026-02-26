@@ -7,6 +7,7 @@
     box-sizing: border-box;
 }
 
+div.quadrado ,
 .list {
     border: 2px solid red;
     padding: 20px;
@@ -16,6 +17,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+div.quadrado{
+    display:flex;
+    flex-direction: column;
+   
 }
 
 p {

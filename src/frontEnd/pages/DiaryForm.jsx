@@ -135,7 +135,7 @@ const listaAlimentos = [
             <span className="erro">{erros.intensidade}</span>
             )}
 
-          <h4>Sentiu antes</h4>
+          <h4>Comoo se sentiu antes ? </h4>
            <div className={`grupo ${erros.sentiuAntes ? "input-erro" : ""}`}>
             {listaSentimentos.map(sentimento => (
             <label key={sentimento}>
@@ -195,7 +195,7 @@ const listaAlimentos = [
     </div>
      {erros.comeu && <span className="erro">{erros.comeu}</span>}
 
-          <h4>Sentiu depois</h4>
+          <h4>O que sentiu depois ? </h4>
         <div className={`grupo ${erros.sentiuDepois ? "input-erro" : ""}`}>
           {listaSentimentos.map(sentimento => (
              <label key={sentimento}>

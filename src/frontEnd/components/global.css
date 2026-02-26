@@ -186,3 +186,10 @@ div#horario.card{
   margin-top: 20px;
   justify-content: center;
 }
+div.container-registros{
+  display: flex;
+  width: 100vw;
+  padding: 20px;
+  margin: 20px;
+  justify-content: center;
+}
