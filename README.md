@@ -26,24 +26,24 @@ O **Diário da Fome Emocional** nasceu da necessidade de entender meus próprios
 ## Mini Screenshots
 
 ### Tela de login
-![Login](../screenshots/captura_login.png)
+![Login](./screenshots/captura_login.png)
 
 ### Tela de Registro
-![Registro](../screenshots/captura_forms1.png)
-![Registro](../screenshots/captura_forms2.png)
-![Registro](../screenshots/captura_forms3.png)
+![Registro](./screenshots/captura_forms1.png)
+![Registro](./screenshots/captura_forms2.png)
+![Registro](./screenshots/captura_forms3.png)
 
 ### Tela de item Registro
-![Item registro](../screenshots/Captura_item_registro.png)
+![Item registro](./screenshots/Captura_item_registro.png)
 
 
 ### Tela lista de registros
-![lista](../screenshots/Captura_lista_registros.png)
+![lista](./screenshots/Captura_lista_registros.png)
 
 ### Tela de Gráficos
-![Gráficos](../screenshots/Captura%20dashboard.png)
+![Gráficos](./screenshots/Captura%20dashboard.png)
 
-> Nota: Imagens acima são ilustrativas. Para uso real, substitua pelas capturas do projeto.
+
 
 ## Propósito
 
